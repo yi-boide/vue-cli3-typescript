@@ -10,7 +10,7 @@ import Datepicker from 'vuejs-datepicker';
 
 @Component({
   components: {
-    Datepicker
+    Datepicker,
   },
 })
 export default class CenterSetting extends Vue {

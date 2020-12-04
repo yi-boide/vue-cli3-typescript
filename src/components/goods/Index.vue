@@ -1,3 +1,11 @@
+<!--
+ * @Descriptin: 
+ * @Version: 0.1
+ * @Autor: boide gui
+ * @Date: 2020-12-04 16:14:52
+ * @LastEditors: boide gui
+ * @LastEditTime: 2020-12-04 16:26:24
+-->
 <template>
   <div id="content" @scroll="scroll" ref="content">
     <Banner />
@@ -22,7 +30,7 @@ import Content from './Content.vue';
 export default class GoodsIndex extends Vue {
   private scrollTop: number  = 0;
   private scroll() {
-    this.scrollTop = this.$refs.content.scrollTop;
+    this.scrollTop = (this.$refs.content as Element).scrollTop;
   }
 }
 </script>

@@ -1,3 +1,11 @@
+<!--
+ * @Descriptin: 
+ * @Version: 0.1
+ * @Autor: boide gui
+ * @Date: 2020-12-04 16:14:52
+ * @LastEditors: boide gui
+ * @LastEditTime: 2020-12-04 16:27:15
+-->
 <template>
   <div id="footer">
     <ul class="flex-box">
@@ -25,7 +33,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class GoodsFooter extends Vue {
   private gid: string | string[] = '';
   public created() {
-    this.gid = this.$route.query.gid;
+    this.gid = this.$route.query.gid as string | string[];
   }
   private buy() {
     console.log('buy: ', this.gid);

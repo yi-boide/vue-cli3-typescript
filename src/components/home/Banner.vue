@@ -25,6 +25,7 @@ let that: HomeBanner;
   },
 })
 export default class HomeBanner extends Vue {
+  [x: string]: any;
   private swiperOption: any = {
     loop: true,
     autoplay: true,
@@ -32,8 +33,8 @@ export default class HomeBanner extends Vue {
         el: '.swiper-pagination',
     },
     on: {
-      tap() {
-        const index = this.realIndex;
+      tap(e) {
+        const index = e.realIndex;
         that.$router.push(that.banner[index].url);
       },
     },

@@ -29,6 +29,7 @@ import CenterOrder from './Order.vue';
   },
 })
 export default class CenterIndex extends Vue {
+  [x: string]: any;
   private uploadimg: string = '';
   private showNews() {
     console.log('news');
@@ -38,7 +39,8 @@ export default class CenterIndex extends Vue {
     this.$router.push('/center/setting');
   }
   private editAvatar() {
-    const file = this.$refs.upload.files[0];
+    const files = 'files';
+    const file = this.$refs.upload[files][0];
     if (file) {
       const URL = window.URL || window.webkitURL;
       const imageURL = URL.createObjectURL(file);

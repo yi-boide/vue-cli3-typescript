@@ -23,7 +23,7 @@
         </li>
       </ul>
     </div>
-    <div class="tab">      
+    <div class="tab">
       <div class="tab-cont">
         <Params />
         <Comments ref="comments" />
@@ -47,6 +47,7 @@ import Detail from './Detail.vue';
   },
 })
 export default class GoodsContent extends Vue {
+  [x: string]: any;
   get load() {
     return this.$store.state.goodsDetail.comments.length > 0;
   }
@@ -62,9 +63,10 @@ export default class GoodsContent extends Vue {
     const bg = 'rgba(255, 255, 255, ' + opacity + ')';
     if (this.load && this.offset.length === 0) {
       this.offset.push(0);
+      const name = '$el';
       setTimeout(() => {
-        this.offset.push(this.$refs.comments.$el.offsetTop - 32);
-        this.offset.push(this.$refs.detail.$el.offsetTop - 32);
+        this.offset.push(this.$refs.comments[name].offsetTop - 32);
+        this.offset.push(this.$refs.detail[name].offsetTop - 32);
       }, 1e2);
     }
     if (this.offset.length > 0) {
