@@ -16,6 +16,10 @@ import { Component, Vue } from 'vue-property-decorator';
 import 'swiper/dist/css/swiper.css';
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
+interface ThisObj {
+  [x: string]: any;
+}
+
 let that: HomeBanner;
 
 @Component({
@@ -33,8 +37,9 @@ export default class HomeBanner extends Vue {
         el: '.swiper-pagination',
     },
     on: {
-      tap(e) {
-        const index = e.realIndex;
+      tap() {
+        const THIS: ThisObj = this;
+        const index = THIS.realIndex;
         that.$router.push(that.banner[index].url);
       },
     },
