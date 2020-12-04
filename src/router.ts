@@ -1,3 +1,11 @@
+/*
+ * @Descriptin: 1
+ * @Version: 0.1
+ * @Autor: boide gui
+ * @Date: 2020-12-04 16:14:52
+ * @LastEditors: boide gui
+ * @LastEditTime: 2020-12-04 16:59:58
+ */
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
@@ -18,7 +26,7 @@ export default new Router({
       },
     },
     {
-      path: '/goods/:id',
+      path: '/goods/:id?',
       name: 'goods',
       component: () => import('./views/Goods.vue'),
     },

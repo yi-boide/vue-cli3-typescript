@@ -4,7 +4,7 @@
  * @Autor: boide gui
  * @Date: 2020-12-04 16:14:52
  * @LastEditors: boide gui
- * @LastEditTime: 2020-12-04 16:27:15
+ * @LastEditTime: 2020-12-04 16:52:02
 -->
 <template>
   <div id="footer">
@@ -33,7 +33,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class GoodsFooter extends Vue {
   private gid: string | string[] = '';
   public created() {
-    this.gid = this.$route.query.gid as string | string[];
+    this.gid = this.$route.params.id || this.$route.params.gid as string | string[];
   }
   private buy() {
     console.log('buy: ', this.gid);
